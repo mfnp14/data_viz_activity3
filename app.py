@@ -5,7 +5,7 @@ st.set_page_config(layout='wide')
 st.title("Atividade 3 - Credit Card Spending in India (Dashboard)")
 st.write("Link: https://www.kaggle.com/datasets/divyaraj2006/credit-card-spending-in-india")
 st.image("assets/course_banner.png")
-# st.image("assets/dataset.cover.jpg") <<-- não sei porque está dando erro ao subir essa imagem
+st.image("assets/dataset.cover.jpg") # <<-- não sei porque está dando erro ao subir essa imagem
  
 #st.write(df.head())
 
