@@ -10,14 +10,14 @@ df = df.dropna(how="all")
 df['Date'] = pd.to_datetime(df['Date'], errors='coerce')
 df['Amount'] = pd.to_numeric(df['Amount'], errors='coerce')
 
-date_options = sorted(df['Date'].dt.normalize().unique())
-city_options = ['Todas'] + sorted(df['City'].dropna().unique().tolist())
-gender_options = ['Todas'] + sorted(df['Gender'].dropna().unique().tolist())
-
 filtered = df.copy()
 
+date_options = sorted(df['Date'].dt.normalize().unique())
+city_options = ['Todas'] + sorted(df['City'].dropna().unique().tolist())
+gender_options = ['Todos'] + sorted(df['Gender'].dropna().unique().tolist())
+card_options = ['Todos'] + sorted(filtered['Card Type'].unique())
 
-# ------------ Função para Formatar valor $ no card inicial 
+# ------------ Função para Formatar valor $ no card inicial
 def human_format(num):
     num = float('{:.3g}'.format(num))
     magnitude = 0
@@ -28,3 +28,12 @@ def human_format(num):
         '{:f}'.format(num).rstrip('0').rstrip('.'),
         ['', 'K', 'M', 'B', 'T'][magnitude]
     )
+
+#------------------------------------------------------------
+
+card_colors = {
+    "Gold": "#F4D35E",
+    "Platinum": "#4F5057",
+    "Signature": "#5886CC",
+    "Silver": "#B0B0B0"
+}
